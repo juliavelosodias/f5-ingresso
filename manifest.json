@@ -1,0 +1,25 @@
+{
+  "name": "Monitor de Ingressos Ticketmaster",
+  "description": "Notifica quando ingressos ficam disponíveis",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "permissions": ["notifications", "storage"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.ticketmaster.com.br/event/venda-geral-bts-world-tour-arirang-28-10*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+
+  "action": {
+    "default_title": "Monitor de Ingressos"
+  }
+}
